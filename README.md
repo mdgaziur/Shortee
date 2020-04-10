@@ -1,4 +1,4 @@
-**Shortee**<br/>
+<h1>Shortee</h1><br/>
 A simple url shortener created with Python and Flask web framework.
 
 ********
