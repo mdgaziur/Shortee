@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Alata|Faster+One|Quicksand&display=swap');
+
+body
+{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+header.navbar
+{
+    background: #4b1010;
+    color: white;
+    font-family: Alata;
+}
+h1.navbar-brand
+{
+    font-size: 3.25em !important;
+    cursor: pointer;
+}
+.navbar-nav
+{
+    display: inline-block;
+}
+.btn-primary
+{
+    background: white!important;
+    color: black!important;
+    border-radius: 2px;
+}
+.bt
+{
+    color: white !important;
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+.bt:active
+{
+    border: 2px solid white;
+    border-radius: 5px;
+}
+.body-title
+{
+    margin-top: 5%;
+    font-family: Alata;
+    text-stroke: 1px black;
+    -webkit-text-stroke: 1px black;
+    color: transparent;
+    letter-spacing: 5px;
+    font-size: 400%;
+}
+.input-container
+{
+    margin-top: 10%;
+}
+.url-short-field
+{
+    padding: 2%;
+    font-family: Alata;
+    width: 50%;
+}
+.url-short-button
+{
+    font-family: Alata;
+    padding: 2%;
+    background: red;
+    border: none;
+    color: white;
+}
+footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: grey;
+    color: white;
+    text-align: center;
+    font-family: Alata;
+}
+div.alert-container
+{
+    margin-top: 2%;
+}
+div.url-done
+{
+    background: #4c1010;
+    color: white;
+    padding: 5%;
+    margin-top: 5%;
+}
+img.author
+{
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 5%;
+}
+h1.author-name
+{
+    font-family: 'Quicksand';
+    margin-top: 5%;
+}
+img.social-image
+{
+    margin-left: 2%;
+    height: 50px;
+}
+h1.title
+{
+    font-family: 'Quicksand';
+}
+h5.author-email
+{
+    font-family: 'Quicksand';
+}

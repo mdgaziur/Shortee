@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <h1 class="body-title" align="center">Shortee - A simple url shortener</h1>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="input-container" align="center">
+                {{ form.url(class="url-short-field") }}
+                {{ form.submit(class="url-short-button") }}
+            </div>
+            {% if form.url.errors %}
+                {% for error in form.url.errors %}
+                    <div class="alert-container" align="center">
+                        <span class="alert-danger">{{ error }}</span>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="url-done" align="center">
+                        {{ message }}<br/> <a href="{{ category }}">{{ category }}</a>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+{% endblock content %}
