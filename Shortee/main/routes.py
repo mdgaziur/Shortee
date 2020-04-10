@@ -1,4 +1,4 @@
-from flask import Blueprint,render_template, url_for, flash, request, redirect
+from flask import Blueprint,render_template, abort, url_for, flash, request, redirect
 from Shortee.main.form import ShortForm
 from Shortee.models import url_data
 from Shortee import db, app
@@ -25,3 +25,13 @@ def about():
 def browse_shorted(shorted):
     url_model = url_data.query.filter_by(id=shorted).first_or_404()
     return redirect(url_model.url)
+
+@main.errorhandler(404)
+def error_404(e):
+    return render_template('error.html',errorcode="404",error_desc=e)
+@main.errorhandler(403)
+def error_403(e):
+    return render_template('error.html',errorcode="403",error_desc=e)
+@main.errorhandler(500)
+def error_500(e):
+    return render_template('error.html',errorcode="500",error_desc=e)

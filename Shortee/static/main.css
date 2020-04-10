@@ -113,3 +113,20 @@ h5.author-email
 {
     font-family: 'Quicksand';
 }
+h1.error-title
+{
+    font-family: 'Quicksand';
+    margin-top: 25%;
+}
+.error-desc
+{
+    font-family: 'Quicksand';
+    margin-top: 5%;
+    color: red;
+    padding: 1%;
+}
+.error-conclude
+{
+    font-family: 'Quicksand';
+    margin-top: 5%;
+}

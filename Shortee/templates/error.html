@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="container" align="center">
-        <h1 class="error_title">Error {{ errorcode }}</h1>
-        <h3 class="error-desc">{{ error_desc }} :(</h3>
-        <h3 class="error-desc">That's all we know about it.</h3>
+        <h1 class="error-title">Error {{ errorcode }}</h1>
+        <p class="error-desc">{{ error_desc }}</p>
+        <h3 class="error-conclude">That's all we know about it.</h3>
     </div>
 {% endblock content %}
