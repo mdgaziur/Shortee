@@ -9,4 +9,5 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI'
 db = SQLAlchemy(app)
 
 from Shortee.main.routes import main
+
 app.register_blueprint(main)
