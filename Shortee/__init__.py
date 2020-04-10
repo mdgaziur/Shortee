@@ -9,5 +9,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI'
 db = SQLAlchemy(app)
 
 from Shortee.main.routes import main
+from Shortee.errors.routes import error
 
 app.register_blueprint(main)
+app.register_blueprint(error)
