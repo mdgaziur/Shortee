@@ -1,7 +1,7 @@
 from flask import Blueprint,render_template, abort, url_for, flash, request, redirect
-from Shortee.main.form import ShortForm
-from Shortee.models import url_data
-from Shortee import db, app
+from app.main.form import ShortForm
+from app.models import url_data
+from app import db, app
 import os, binascii
 
 main = Blueprint('main',__name__)

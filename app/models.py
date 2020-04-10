@@ -1,4 +1,4 @@
-from Shortee import db
+from app import db
 
 class url_data(db.Model):
     serial = db.Column(db.Integer, primary_key=True)
