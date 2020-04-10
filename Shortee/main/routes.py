@@ -2,7 +2,7 @@ from flask import Blueprint,render_template, abort, url_for, flash, request, red
 from Shortee.main.form import ShortForm
 from Shortee.models import url_data
 from Shortee import db, app
-import secrets
+import os, binascii
 
 main = Blueprint('main',__name__)
 
@@ -12,7 +12,7 @@ def home():
     form = ShortForm()
     if form.validate_on_submit():
         current_url = url_data()
-        current_url.id = str(secrets.token_hex(4))
+        current_url.id =  binascii.b2a_hex(os.urandom(3)).decode('UTF-8')
         current_url.url = form.url.data
         db.session.add(current_url)
         db.session.commit()
