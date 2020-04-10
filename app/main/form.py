@@ -1,8 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import URL,DataRequired
-from validators import url as uchecker
-from wtforms import ValidationError
 
 class ShortForm(FlaskForm):
     url = StringField(

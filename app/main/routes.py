@@ -11,12 +11,18 @@ main = Blueprint('main',__name__)
 def home():
     form = ShortForm()
     if form.validate_on_submit():
-        current_url = url_data()
-        current_url.id =  binascii.b2a_hex(os.urandom(3)).decode('UTF-8')
-        current_url.url = form.url.data
-        db.session.add(current_url)
-        db.session.commit()
-        flash(f'URL shorted successfully! Shorted Url: ',f'{ "http://"+request.host + "/" +current_url.id}')
+        already=url_data.query.filter_by(url=form.url.data).first()
+        if already:
+            flash(f'URL shorted successfully! Shorted Url: ', f'{"http://" + request.host + "/"+already.id}')
+            return render_template('home.html',form=form)
+        else:
+            current_url = url_data()
+            current_url.id =  binascii.b2a_hex(os.urandom(3)).decode('UTF-8')
+            current_url.url = form.url.data
+            db.session.add(current_url)
+            db.session.commit()
+            flash(f'URL shorted successfully! Shorted Url: ',f'{ "http://"+request.host + "/" +current_url.id}')
+            return render_template('home.html',form=form)
     return render_template("home.html",form=form)
 @main.route("/about")
 def about():
